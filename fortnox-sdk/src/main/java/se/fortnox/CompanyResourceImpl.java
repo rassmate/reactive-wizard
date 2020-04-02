@@ -33,8 +33,10 @@ public class CompanyResourceImpl implements CompanyResource {
     }
 
     @Override
-    public Observable<CompanyInformation> getCompanyInformation() {
-        return RxReactiveStreams.toObservable(customers.getAccessToken(fortnoxConfig.getDefaultCustomer())
+    public Observable<CompanyInformation> getCompanyInformation(String customer) {
+        String customerId = customer != null ? customer : fortnoxConfig.getDefaultCustomer();
+
+        return RxReactiveStreams.toObservable(customers.getAccessToken(customerId)
             .flatMap(companyInformationResource::getCompanyInformation)
             .map(CompanyInformationResult::getCompanyInformation));
     }
