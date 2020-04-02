@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>reactivewizard-parent</artifactId>
 		<groupId>se.fortnox.reactivewizard</groupId>
-		<version>9.9.9-SNAPSHOT</version>
+		<version>999.9.9-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
