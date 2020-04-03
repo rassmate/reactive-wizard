@@ -1,7 +1,6 @@
 package se.fortnox.companyinformation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import se.fortnox.CompanyInformation;
 
 public class CompanyInformationResult {
     @JsonProperty("CompanyInformation")

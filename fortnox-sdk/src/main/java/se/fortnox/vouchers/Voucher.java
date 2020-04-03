@@ -2,7 +2,6 @@ package se.fortnox.vouchers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public class Voucher {
@@ -23,6 +22,18 @@ public class Voucher {
 
     @JsonProperty("Year")
     private Integer year;
+
+    @JsonProperty("Comments")
+    private String comments;
+
+    @JsonProperty("CostCenter")
+    private String costCenter;
+
+    @JsonProperty("Project")
+    private Integer project;
+
+    @JsonProperty("VoucherRows")
+    private List<VoucherRow> voucherRows;
 
     public String getVoucherSeries() {
         return voucherSeries;
@@ -70,5 +81,29 @@ public class Voucher {
 
     public void setYear(Integer year) {
         this.year = year;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public String getCostCenter() {
+        return costCenter;
+    }
+
+    public void setCostCenter(String costCenter) {
+        this.costCenter = costCenter;
+    }
+
+    public Integer getProject() {
+        return project;
+    }
+
+    public void setProject(Integer project) {
+        this.project = project;
     }
 }

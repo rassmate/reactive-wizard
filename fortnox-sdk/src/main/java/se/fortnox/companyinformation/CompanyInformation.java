@@ -1,4 +1,4 @@
-package se.fortnox;
+package se.fortnox.companyinformation;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

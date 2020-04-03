@@ -9,6 +9,8 @@ import se.fortnox.authorization.AuthorizationResource;
 import se.fortnox.authorization.AuthorizationResult;
 import se.fortnox.companyinformation.CompanyInformationResource;
 import se.fortnox.companyinformation.CompanyInformationResult;
+import se.fortnox.companyinformation.CompanyInformation;
+import se.fortnox.impl.ActivationResourceImpl;
 import se.fortnox.reactivewizard.jaxrs.WebException;
 
 import java.util.UUID;

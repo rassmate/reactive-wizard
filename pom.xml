@@ -71,7 +71,6 @@
         <module>dbmigrate</module>
         <module>reactor-client</module>
 	    <module>fortnox-sdk</module>
-        <module>fortnox-sdk-api</module>
     </modules>
 
     <properties>

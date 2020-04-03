@@ -1,9 +1,11 @@
-package se.fortnox;
+package se.fortnox.impl;
 
 import rx.Observable;
 import rx.RxReactiveStreams;
+import se.fortnox.Customers;
 import se.fortnox.authorization.AuthorizationResource;
 import se.fortnox.companyinformation.CompanyInformationResource;
+import se.fortnox.api.ActivationResource;
 
 import javax.inject.Inject;
 

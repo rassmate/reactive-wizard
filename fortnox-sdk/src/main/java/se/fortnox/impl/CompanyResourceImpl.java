@@ -1,11 +1,13 @@
-package se.fortnox;
+package se.fortnox.impl;
 
 import rx.Observable;
 import rx.RxReactiveStreams;
+import se.fortnox.CustomerRepository;
 import se.fortnox.auth.FortnoxConfig;
 import se.fortnox.companyinformation.CompanyInformationResource;
 import se.fortnox.companyinformation.CompanyInformationResult;
-import se.fortnox.vouchers.VouchersResource;
+import se.fortnox.companyinformation.CompanyInformation;
+import se.fortnox.api.CompanyResource;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -14,21 +16,21 @@ import javax.inject.Singleton;
 public class CompanyResourceImpl implements CompanyResource {
 
     private final CompanyInformationResource companyInformationResource;
-    private Customers customers;
-    private FortnoxConfig fortnoxConfig;
+    private       CustomerRepository         customerRepository;
+    private       FortnoxConfig              fortnoxConfig;
 
     @Inject
     public CompanyResourceImpl(
         CompanyInformationResource companyInformationResource,
-        Customers customers,
+        CustomerRepository customerRepository,
         FortnoxConfig fortnoxConfig) {
         this.companyInformationResource = companyInformationResource;
-        this.customers = customers;
+        this.customerRepository = customerRepository;
         this.fortnoxConfig = fortnoxConfig;
 
         if (fortnoxConfig.getDefaultCustomer() != null &&
             fortnoxConfig.getDefaultCustomerAccessToken() != null) {
-            customers.register(fortnoxConfig.getDefaultCustomer(), fortnoxConfig.getDefaultCustomerAccessToken());
+            customerRepository.register(fortnoxConfig.getDefaultCustomer(), fortnoxConfig.getDefaultCustomerAccessToken());
         }
     }
 
@@ -36,7 +38,7 @@ public class CompanyResourceImpl implements CompanyResource {
     public Observable<CompanyInformation> getCompanyInformation(String customer) {
         String customerId = customer != null ? customer : fortnoxConfig.getDefaultCustomer();
 
-        return RxReactiveStreams.toObservable(customers.getAccessToken(customerId)
+        return RxReactiveStreams.toObservable(customerRepository.getAccessToken(customerId)
             .flatMap(companyInformationResource::getCompanyInformation)
             .map(CompanyInformationResult::getCompanyInformation));
     }

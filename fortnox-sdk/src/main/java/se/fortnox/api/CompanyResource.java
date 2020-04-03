@@ -1,6 +1,7 @@
-package se.fortnox;
+package se.fortnox.api;
 
 import rx.Observable;
+import se.fortnox.companyinformation.CompanyInformation;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

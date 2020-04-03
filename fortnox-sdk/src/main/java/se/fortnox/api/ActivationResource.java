@@ -1,4 +1,4 @@
-package se.fortnox;
+package se.fortnox.api;
 
 import rx.Observable;
 
