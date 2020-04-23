@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+httpClient: https://api.fortnox.se
+
+fortnox:
+  clientSecret: {{CLIENT_SECRET}}
+  defaultCustomer: {{DEFAULT_CUSTOMER}}
+  defaultCustomerAccessToken: {{DEFAULT_CUSTOMER_ACCESS_TOKEN}}

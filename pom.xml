@@ -6,7 +6,7 @@
 
     <groupId>se.fortnox.reactivewizard</groupId>
     <artifactId>reactivewizard-parent</artifactId>
-    <version>9.9.9-SNAPSHOT</version>
+    <version>999.9.9-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Reactive Wizard</name>
@@ -70,6 +70,7 @@
         <module>validation</module>
         <module>dbmigrate</module>
         <module>reactor-client</module>
+	    <module>fortnox-sdk</module>
     </modules>
 
     <properties>
